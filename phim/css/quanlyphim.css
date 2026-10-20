@@ -1,0 +1,361 @@
+/* THANH CÔNG CỤ */
+.movie-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 22px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.movie-filter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.movie-filter select,
+.movie-filter button,
+.movie-form input,
+.movie-form textarea,
+.movie-form select {
+    padding: 11px 13px;
+    border-radius: 7px;
+    border: 1px solid #383838;
+    background: #1c1c1c;
+    color: #fff;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.movie-filter select {
+    min-width: 160px;
+    cursor: pointer;
+}
+
+.movie-filter button {
+    background: #e50914;
+    border-color: #e50914;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.movie-filter button:hover {
+    background: #c40812;
+}
+
+.movie-count {
+    color: #bbb;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+/* KHUNG BẢNG PHIM */
+.movie-table-wrap {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    border: 1px solid #303030;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background: #171717;
+}
+
+.movie-table {
+    width: 100%;
+    min-width: 1000px;
+    table-layout: fixed;
+    border-collapse: collapse;
+    background: #171717;
+    color: #fff;
+}
+
+/* CỐ ĐỊNH ĐỘ RỘNG TỪNG CỘT */
+.movie-table th:nth-child(1),
+.movie-table td:nth-child(1) {
+    width: 6%;
+}
+
+.movie-table th:nth-child(2),
+.movie-table td:nth-child(2) {
+    width: 12%;
+}
+
+.movie-table th:nth-child(3),
+.movie-table td:nth-child(3) {
+    width: 20%;
+}
+
+.movie-table th:nth-child(4),
+.movie-table td:nth-child(4) {
+    width: 30%;
+}
+
+.movie-table th:nth-child(5),
+.movie-table td:nth-child(5) {
+    width: 15%;
+}
+
+.movie-table th:nth-child(6),
+.movie-table td:nth-child(6) {
+    width: 17%;
+}
+
+/* KIỂU DÁNG CHUNG CHO Ô */
+.movie-table th,
+.movie-table td {
+    padding: 13px;
+    border-bottom: 1px solid #303030;
+    text-align: left;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+.movie-table th {
+    background: #242424;
+    color: #fff;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.movie-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.movie-table tbody tr:hover td {
+    background: #222;
+}
+
+/* ID KHÔNG XUỐNG DÒNG */
+.movie-table th:nth-child(1),
+.movie-table td:nth-child(1) {
+    white-space: nowrap;
+}
+
+/* TÊN PHIM VÀ MÔ TẢ */
+.movie-table td:nth-child(3),
+.movie-table td:nth-child(4) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    line-height: 1.5;
+}
+
+/* ẢNH PHIM */
+.movie-poster {
+    display: block;
+    width: 60px;
+    height: 82px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+    background: #252525;
+}
+
+/* NHÃN BẢNG DỮ LIỆU */
+.source-badge {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 20px;
+    background: #303030;
+    color: #ddd;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+/* NÚT THAO TÁC */
+.btn {
+    display: inline-block;
+    padding: 9px 12px;
+    border: 0;
+    border-radius: 6px;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 13px;
+    white-space: nowrap;
+    text-align: center;
+    box-sizing: border-box;
+    transition: filter 0.2s ease;
+}
+
+.btn-add {
+    background: #16a34a;
+}
+
+.btn-edit {
+    background: #2563eb;
+}
+
+.btn-delete {
+    background: #dc2626;
+}
+
+.btn-cancel {
+    background: #444;
+}
+
+.btn:hover {
+    filter: brightness(1.12);
+}
+
+.movie-actions {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+}
+
+.movie-actions form {
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.movie-actions .btn {
+    flex-shrink: 0;
+}
+
+/* THÔNG BÁO */
+.notice,
+.error {
+    padding: 12px;
+    margin: 15px 0;
+    border-radius: 6px;
+    line-height: 1.5;
+}
+
+.notice {
+    background: #173b28;
+    color: #86efac;
+    border: 1px solid #166534;
+}
+
+.error {
+    background: #451a1a;
+    color: #fca5a5;
+    border: 1px solid #7f1d1d;
+}
+
+/* BẢNG TRỐNG */
+.movie-empty {
+    text-align: center !important;
+    padding: 30px !important;
+    color: #aaa;
+}
+
+/* FORM THÊM / SỬA PHIM */
+.movie-form-card {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 0 30px;
+    padding: 30px;
+    background: linear-gradient(145deg, #1b1b1b, #141414);
+    border: 1px solid #303030;
+    border-radius: 16px;
+    box-sizing: border-box;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.movie-form-card h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 12px;
+}
+
+.movie-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 20px;
+    width: 100%;
+}
+
+.movie-form .field {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    min-width: 0;
+}
+
+.movie-form .full {
+    grid-column: 1 / -1;
+}
+
+.movie-form label {
+    color: #e5e5e5;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.movie-form input,
+.movie-form textarea,
+.movie-form select {
+    width: 100%;
+    min-width: 0;
+}
+
+.movie-form textarea {
+    min-height: 95px;
+    resize: vertical;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+.movie-form input:focus,
+.movie-form textarea:focus,
+.movie-form select:focus {
+    outline: 1px solid #e50914;
+    border-color: #e50914;
+}
+
+.form-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 5px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .movie-stats {
+        grid-template-columns: repeat(2, minmax(120px, 1fr));
+    }
+
+    .movie-toolbar {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+    .movie-form {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .movie-form .full {
+        grid-column: auto;
+    }
+
+    .movie-form-card {
+        padding: 15px;
+    }
+
+    .movie-filter {
+        width: 100%;
+    }
+
+    .movie-filter select,
+    .movie-filter button {
+        width: 100%;
+    }
+
+    .movie-table {
+        min-width: 1000px;
+    }
+}

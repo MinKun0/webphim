@@ -1,0 +1,348 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #0d0d0d;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.search-page {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+/* Thanh tìm kiếm */
+.search-bar-form {
+    width: 100%;
+    max-width: 950px;
+    margin: 120px auto 70px;
+}
+
+.search-input-wrapper {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 0 27px;
+    background: #1c1c1c;
+    border-radius: 50px;
+    transition: border 0.2s;
+}
+
+.search-input-wrapper:focus-within {
+    outline: 1px solid #414141;
+}
+
+.search-icon {
+    flex-shrink: 0;
+    font-size: 20px;
+    line-height: 1;
+    color: #fff;
+    transform: rotate(-20deg);
+}
+
+.search-input-wrapper input {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff;
+    font-size: 20px;
+}
+
+.search-input-wrapper input::placeholder {
+    color: #555;
+}
+
+.search-submit-btn {
+    flex-shrink: 0;
+    min-width: 50px;
+    height: 45px;
+    padding: 0 24px;
+    border: none;
+    border-radius: 30px;
+    background: #303030;
+    color: #ddd;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.search-submit-btn:hover {
+    background: #454545;
+}
+
+/*Kết quả tìm kiếm*/
+.movie-list {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.movie-card {
+    display: block;
+    min-width: 0;
+    color: #fff;
+    text-decoration: none;
+}
+
+.movie-thumb {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #202020;
+}
+
+.movie-thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.movie-title {
+    margin: 11px 4px 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.65;
+}
+
+.no-result {
+    color: #aaa;
+    font-size: 16px;
+    padding: 10px 0;
+}
+
+/* Tiêu đề Xu hướng */
+.trending-section {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto 50px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.trending-section h4 {
+    color: white;
+    padding-left: 30px;
+    margin-left: 0;
+    font-size: 18px;
+}
+
+/*Phim xu hướng*/
+.slider-container {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Wrapper chứa các sản phẩm */
+.products-wrapper {
+    overflow: hidden;
+    margin: 0 40px;
+}
+
+.container {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 20px;                
+}
+
+/* Mỗi sản phẩm */
+.product {
+    flex: 0 0 calc(16.666% - 17px); 
+    position: relative;
+    text-align: center;
+    border-radius: 12px;
+    background: rgb(0, 0, 0);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    padding-top: 10px;
+    overflow: hidden;
+}
+
+.product:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.product img {
+    width: 100%;
+    height: 300px;              
+    object-fit: cover;          
+    border-radius: 12px;       
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);  
+    background: linear-gradient(135deg, #2c2c2c, #1a1a1a); 
+    display: block;
+    margin-bottom: 60px
+}
+
+/* Badge/huy hiệu */
+.badge {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    background: #e50914;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 2;
+}
+
+/* Lớp phủ overlay */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    padding: 30px 10px 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 0 0 12px 12px;
+}
+
+.product:hover .overlay {
+    opacity: 1;
+}
+
+/* Tiêu đề sản phẩm */
+.title {
+    position: absolute;
+    bottom: 15px;
+    left: 10px;
+    right: 10px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
+    z-index: 2;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+/* Nút điều khiển mũi tên */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: rgb(113, 113, 113);
+    border: none;
+    width: 40px;
+    height: 80px;
+    font-size: 30px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-btn:hover {
+    color: white;
+}
+
+.prev-btn {
+    left: 0;
+}
+
+.next-btn {
+    right: 0;
+}
+
+.nav-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.nav-btn.disabled:hover {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+
+@media (max-width: 1024px) {
+    .product {
+        flex: 0 0 calc(33.333% - 14px); /* 3 sản phẩm trên 1 dòng */
+    }
+    
+    .products-wrapper {
+        margin: 0 20px;
+    }
+}
+
+/*
+/* Máy tính bảng 
+@media (max-width: 1100px) {
+    .movie-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .search-bar-form {
+        margin-top: 70px;
+        margin-bottom: 100px;
+    }
+}
+
+/* Điện thoại 
+@media (max-width: 600px) {
+    .search-page {
+        padding: 0 16px;
+    }
+
+    .search-bar-form {
+        margin: 45px auto 70px;
+    }
+
+    .search-input-wrapper {
+        height: 58px;
+        gap: 10px;
+        padding: 0 15px;
+    }
+
+    .search-icon {
+        font-size: 26px;
+    }
+
+    .search-input-wrapper input {
+        font-size: 14px;
+    }
+
+    .search-submit-btn {
+        min-width: auto;
+        height: 38px;
+        padding: 0 12px;
+        font-size: 13px;
+    }
+
+    .trending-section h3 {
+        font-size: 19px;
+        margin-bottom: 20px;
+    }
+
+    .movie-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 12px;
+    }
+
+    .movie-title {
+        font-size: 14px;
+    }
+}
